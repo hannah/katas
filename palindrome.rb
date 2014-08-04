@@ -2,19 +2,16 @@
 require 'pry'
 
 def palindrome(string)
-   def reversal(string)
-     half_length = string.length/2
-     half_length.times {|i| string[i], string[-i-1] = string[-i-1], string[i]}
-   end
 
   palindrome = string.gsub(/\W/,"")
-  binding.pry
 
-  if reversal(palindrome).downcase == palindrome.downcase
-    return true
+
+  if palindrome.downcase.reverse! == palindrome.downcase
+    puts "This is a palindrome"
   else
-    return false
+    puts "Not a palidrome"
   end
 end
 
-palindrome("Abba Zabba, you're my only friend")
+
+palindrome("Kayak")
