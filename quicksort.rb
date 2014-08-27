@@ -16,13 +16,17 @@ def quicksort(array)
     end
 
     sorted_array = []
-    sorted_array << self.quicksort(less)
+    sorted_array << quicksort(less)
     sorted_array << pivot
-    sorted_array << self.quicksort(greater)
+    sorted_array << quicksort(greater)
 
-    return sorted_array.flatten!
+    sorted_array.flatten!
   end
 end
 
+puts quicksort([1, 3, 5, 6, 7, 3, 5, 4, 2 , 5, 6, 1, 0, 4, 9])
 
-quicksort([1, 3, 2, 5, 4])
+
+
+
+
