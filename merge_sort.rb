@@ -1,10 +1,10 @@
-def merge_sort(array)
-  if array.length == 1
-    return array
+def merge_sort(list)
+  if list.length <= 1
+    return list
   else
-    mid = (array.length)/2
-    left = array.slice(0, mid)
-    right = array.slice(mid, -1)
+    mid = ((list.length)/2).round
+    left = list.slice(0...mid-1)
+    right = list.slice(mid...list.last)
 
     merge(merge_sort(left), merge_sort(right))
   end
@@ -21,5 +21,8 @@ def merge(left, right)
   end
 end
 
-list = [1, 3, 6, 7, 3, 6, 5, 7, 2, 9, 0]
-merge_sort(list)
+
+
+kittens = [1,3,6,7,3,6,5,7,2,9,0]
+list = [2, 1]
+puts merge_sort(list)
