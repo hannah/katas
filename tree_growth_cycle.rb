@@ -1,26 +1,30 @@
+require 'pry'
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-inputs = STDIN.gets.chomp
+inputs = gets.chomp.to_i
 
-cycle1 = STDIN.gets.chomp.to_i
-cycle2 = STDIN.gets.chomp.to_i
+cycle1 = gets.chomp.to_i
+cycle2 = gets.chomp.to_i
 
 @height = 1
 
 def height_analysis(cycle)
+    binding.pry
     if cycle == 0
-        STDOUT.puts @height
+        puts @height
     end
 
     unless cycle == 1
         if cycle % 2 == 1
             @height = @height + 1
             cycle = cycle - 1
+            height_analysis(cycle)
         else
             @height = @height*2
             cycle = cycle - 1
+            height_analysis(cycle)
         end
     else
-        STDOUT.puts @height
+       puts @height
     end
 end
 
