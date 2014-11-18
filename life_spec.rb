@@ -10,6 +10,8 @@ describe Cell do
   it 'checks if a cell is alive' do
     living_cell = Cell.new
     expect(living_cell.state).to eq(true)
+    living_cell.dies
+    expect(living_cell.state).to eq(false)
   end
 
 
